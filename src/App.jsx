@@ -83,11 +83,7 @@ setTimeout(()=>{
                 <RickItem key={residents} residents={residents}/>
               ))}
             </ul>
-            <Pagiantion
-        location={location}
-       /* pageNumber={pageNumber}*/
-        /*updatePageNumber={updatePageNumber}*/
-      />
+           
         </div>
       </div>
      
