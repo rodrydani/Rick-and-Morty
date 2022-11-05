@@ -8,11 +8,16 @@
 }
 body{
   background-color: #242635;
+ overflow-x: hidden;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 .banner{
- border: 4px solid green;
+ padding: 0 2rem;
   border-bottom: 5px solid green;
+  box-shadow: 0 0 15px greenyellow;
 }
 .frontPage{
   width: 100%;
@@ -45,22 +50,27 @@ body{
 .input{
   max-width: 400px;
   height: 30px;
-  margin-top: 4rem;
-  background: linear-gradient(to right, rgb(255, 255, 255), rgb(66, 191, 110));
-  font-size: 1rem;
+  margin-top: 6rem;
 
+  font-size: 1rem;
+  border-radius: 2px;
+  color: gray;
+
+}
+.input:active{
+  color: black;
 }
 .seach-button{
   max-width: 200px;
   height: 30px;
-  margin-top: 4rem;
+  margin-top: 6rem;
   color: white;
   background-color: black;
   border: 1px solid greenyellow;
   box-shadow: 1px 1px 10px greenyellow;
   cursor: pointer;
   transform: translateY(-4px);
-  transition: .5s;
+  transition: .2s;
 }
 .seach-button:active{
   transform: translateY(0px);
@@ -101,31 +111,40 @@ button{
   align-items: center;
   background: #062226;
   color: #FFFFFF;
-  margin-top: 1rem;
+  margin-top: 4rem;
+  border-radius: 10px;
+ border: 2px inset greenyellow;
+ box-shadow: 0 0 15px greenyellow;
 }
 
 .charactersContainer{
-  margin-top: 200px;
+  margin-top: 20rem;
   color: #FFFFFF;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: (0,1fr);
- grid-gap: 1rem;  
+ gap: 3rem; 
  border-radius: 20px;
- box-shadow: -10px -2px 20px  rgb(34, 33, 33);
+
 
 }
 
 .divCharacters{
-  width: 100%;
-  background: #062226;
+  width: 200px;
+  background: #0f3237;
   border-radius: 4px 4px 0px 0px;
   padding: 1rem;
   display: flex;
   justify-content: center; 
-  
-
+  box-shadow: 0px 0px 10px  rgb(50, 196, 40);
+  margin:1rem  1rem;
+ list-style: none;
+}
+.image{
+  width: 150px;
+  border: 2px solid rgb(130, 83, 83);
+  border-radius: 100%;
 }
 .infoCharacters{
   padding: 1rem;
@@ -143,6 +162,15 @@ button{
   color: #FBFBFB;
 }
 
+.img{ 
+  width:700px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .pagination{
   display: flex;
   justify-content: space-between;
@@ -154,3 +182,30 @@ button{
  cursor: pointer;
 }
 
+@media (max-width: 558px) {
+  .img{ 
+    width:400px;
+    height: 200px;
+    
+  }
+  .charactersContainer{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .img{ 
+    width:700px;
+    height: 500px;
+    
+  }
+}
+
+@media (min-width: 992px) {
+  .img{ 
+    width:700px;
+    height: 500px;
+    
+  }
+}

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import ReactPaginate from 'react-paginate';
+
 
 const ResidentInfo = ({residents}) => {
 
@@ -17,7 +17,7 @@ const ResidentInfo = ({residents}) => {
     return (
         <>
         <div className='divCharacters'>
-            <li>
+            <li >
                 <img className='image' src={characters.image} alt="" />
                 <div className='infoCharacters'>
                     <h3>{characters.name}</h3>

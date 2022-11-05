@@ -14,10 +14,11 @@ function App() {
   const[location, setLocation]= useState({})
   const[inputId, setInputId]= useState("Escribe el nombre de la ubicación")
   const [loading, setLoading]=useState(false);
- const [pageNumber,updatePageNumber]=useState(1);
+ const [characterCount,setCharacterCount]=useState(0);
 let info=0;
   useEffect(() => {
     const randomId = Math.floor(Math.random ()*126)
+    const pageNumber=1
     axios.get(`https://rickandmortyapi.com/api/location/${randomId}`)
       .then(res => setLocation(res.data))
       /*---------Loading---------*/ 
@@ -35,7 +36,7 @@ setTimeout(()=>{
     
     axios.get(`https://rickandmortyapi.com/api/location/${inputId}`)
       .then(res => setLocation(res.data))
-      info=location.character?.pages
+      setCharacterCount(location.residents.length)
   }
 
 
@@ -46,7 +47,7 @@ setTimeout(()=>{
     {
            loading ?
            <div className='Loader'>
-            <img src={RickLoad} alt="" />
+            <img className='img' src={RickLoad} alt="" />
            <h1 className='Loading'>Loading...</h1>
              </div>
            :
@@ -84,8 +85,8 @@ setTimeout(()=>{
             </ul>
             <Pagiantion
         location={location}
-        pageNumber={pageNumber}
-        updatePageNumber={updatePageNumber}
+       /* pageNumber={pageNumber}*/
+        /*updatePageNumber={updatePageNumber}*/
       />
         </div>
       </div>
